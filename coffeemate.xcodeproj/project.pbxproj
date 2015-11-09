@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45FBF729A59E225BB919A2F3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D688DCDE11C21B2DB77FD335 /* libPods.a */; };
+		560924831BE9C7F400E1099B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560924811BE9C7F400E1099B /* AddressBook.framework */; };
+		5660EF811BEACB5D00F06E08 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5660EF801BEACB5D00F06E08 /* CoreLocation.framework */; };
+		567A1BEC1BE565CE0050646B /* cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 567A1BEB1BE565CE0050646B /* cafe.m */; };
+		5695125F1BE73963006C6A7C /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 5695125E1BE73963006C6A7C /* Location.m */; };
 		56D87A791BE5360900BD4736 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D87A781BE5360900BD4736 /* main.m */; };
 		56D87A7C1BE5360900BD4736 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D87A7B1BE5360900BD4736 /* AppDelegate.m */; };
 		56D87A7F1BE5360900BD4736 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D87A7E1BE5360900BD4736 /* MasterViewController.m */; };
@@ -16,6 +21,8 @@
 		56D87A8A1BE5360900BD4736 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D87A881BE5360900BD4736 /* LaunchScreen.storyboard */; };
 		56D87A951BE5360900BD4736 /* coffeemateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D87A941BE5360900BD4736 /* coffeemateTests.m */; };
 		56D87AA01BE5360900BD4736 /* coffeemateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D87A9F1BE5360900BD4736 /* coffeemateUITests.m */; };
+		56ED383A1BE8988900D996E6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56ED38391BE8988900D996E6 /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		56ED383D1BE899A300D996E6 /* mapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ED383C1BE899A300D996E6 /* mapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09E67173CBB444C9791E54BA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		560924811BE9C7F400E1099B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		560924821BE9C7F400E1099B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		5660EF801BEACB5D00F06E08 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		567A1BEA1BE565CE0050646B /* cafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cafe.h; sourceTree = "<group>"; };
+		567A1BEB1BE565CE0050646B /* cafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cafe.m; sourceTree = "<group>"; };
+		5695125D1BE73963006C6A7C /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		5695125E1BE73963006C6A7C /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		56D87A741BE5360900BD4736 /* coffeemate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coffeemate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D87A781BE5360900BD4736 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56D87A7A1BE5360900BD4736 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +69,11 @@
 		56D87A9B1BE5360900BD4736 /* coffeemateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coffeemateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D87A9F1BE5360900BD4736 /* coffeemateUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = coffeemateUITests.m; sourceTree = "<group>"; };
 		56D87AA11BE5360900BD4736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56ED38391BE8988900D996E6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		56ED383B1BE899A300D996E6 /* mapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapViewController.h; sourceTree = "<group>"; };
+		56ED383C1BE899A300D996E6 /* mapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapViewController.m; sourceTree = "<group>"; };
+		71D5C01B58A02F18191847D1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D688DCDE11C21B2DB77FD335 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +81,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5660EF811BEACB5D00F06E08 /* CoreLocation.framework in Frameworks */,
+				560924831BE9C7F400E1099B /* AddressBook.framework in Frameworks */,
+				56ED383A1BE8988900D996E6 /* MapKit.framework in Frameworks */,
+				45FBF729A59E225BB919A2F3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +105,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11897A138BA7B36972717EE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5660EF801BEACB5D00F06E08 /* CoreLocation.framework */,
+				560924811BE9C7F400E1099B /* AddressBook.framework */,
+				560924821BE9C7F400E1099B /* AddressBookUI.framework */,
+				56ED38391BE8988900D996E6 /* MapKit.framework */,
+				D688DCDE11C21B2DB77FD335 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		56D87A6B1BE5360900BD4736 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +124,8 @@
 				56D87A931BE5360900BD4736 /* coffeemateTests */,
 				56D87A9E1BE5360900BD4736 /* coffeemateUITests */,
 				56D87A751BE5360900BD4736 /* Products */,
+				8DB67479078C15390A280967 /* Pods */,
+				11897A138BA7B36972717EE3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,8 +146,14 @@
 				56D87A7B1BE5360900BD4736 /* AppDelegate.m */,
 				56D87A7D1BE5360900BD4736 /* MasterViewController.h */,
 				56D87A7E1BE5360900BD4736 /* MasterViewController.m */,
+				567A1BEA1BE565CE0050646B /* cafe.h */,
+				567A1BEB1BE565CE0050646B /* cafe.m */,
 				56D87A801BE5360900BD4736 /* DetailViewController.h */,
 				56D87A811BE5360900BD4736 /* DetailViewController.m */,
+				5695125D1BE73963006C6A7C /* Location.h */,
+				5695125E1BE73963006C6A7C /* Location.m */,
+				56ED383B1BE899A300D996E6 /* mapViewController.h */,
+				56ED383C1BE899A300D996E6 /* mapViewController.m */,
 				56D87A831BE5360900BD4736 /* Main.storyboard */,
 				56D87A861BE5360900BD4736 /* Assets.xcassets */,
 				56D87A881BE5360900BD4736 /* LaunchScreen.storyboard */,
@@ -145,6 +189,15 @@
 			path = coffeemateUITests;
 			sourceTree = "<group>";
 		};
+		8DB67479078C15390A280967 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71D5C01B58A02F18191847D1 /* Pods.debug.xcconfig */,
+				09E67173CBB444C9791E54BA /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56D87AA41BE5360900BD4736 /* Build configuration list for PBXNativeTarget "coffeemate" */;
 			buildPhases = (
+				A4589B9523579BB6F29F972D /* Check Pods Manifest.lock */,
 				56D87A701BE5360900BD4736 /* Sources */,
 				56D87A711BE5360900BD4736 /* Frameworks */,
 				56D87A721BE5360900BD4736 /* Resources */,
+				53142D899365DE567EADC36C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,14 +325,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		53142D899365DE567EADC36C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4589B9523579BB6F29F972D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		56D87A701BE5360900BD4736 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				567A1BEC1BE565CE0050646B /* cafe.m in Sources */,
 				56D87A7C1BE5360900BD4736 /* AppDelegate.m in Sources */,
 				56D87A7F1BE5360900BD4736 /* MasterViewController.m in Sources */,
 				56D87A791BE5360900BD4736 /* main.m in Sources */,
+				56ED383D1BE899A300D996E6 /* mapViewController.m in Sources */,
+				5695125F1BE73963006C6A7C /* Location.m in Sources */,
 				56D87A821BE5360900BD4736 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +506,7 @@
 		};
 		56D87AA51BE5360900BD4736 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71D5C01B58A02F18191847D1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = coffeemate/Info.plist;
@@ -426,6 +518,7 @@
 		};
 		56D87AA61BE5360900BD4736 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09E67173CBB444C9791E54BA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = coffeemate/Info.plist;
@@ -502,6 +595,7 @@
 				56D87AA61BE5360900BD4736 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56D87AA71BE5360900BD4736 /* Build configuration list for PBXNativeTarget "coffeemateTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +604,7 @@
 				56D87AA91BE5360900BD4736 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56D87AAA1BE5360900BD4736 /* Build configuration list for PBXNativeTarget "coffeemateUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +613,7 @@
 				56D87AAC1BE5360900BD4736 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

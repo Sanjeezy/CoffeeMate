@@ -7,12 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UITableViewController //<CLLocationManagerDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
+
+@property (nonatomic,strong)NSString *userLatitude;
+
+@property (nonatomic,strong)NSString *userLongitude;
+
+@property (nonatomic,strong)NSString *userCoordinates;
+
+@property (nonatomic,strong)NSArray *cafes;
+
+
 
 
 @end

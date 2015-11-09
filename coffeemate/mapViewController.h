@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
-@interface mapViewController : UIViewController
+@interface mapViewController : UIViewController <MKMapViewDelegate,CLLocationManagerDelegate>
+
+@property (nonatomic,strong)IBOutlet MKMapView *mapView; //linking mapView to code
+
+//@property(nonatomic, retain) CLLocationManager *locationManager;
+
+
+
+
 
 @end
