@@ -6,6 +6,17 @@
 //  Copyright © 2015 SanjayTamizharasu. All rights reserved.
 //
 
+
+
+//
+///
+//// The location object is a data model that holds the specific properties of each Cafe's general location
+///
+//
+
+
+
+
 #import <Foundation/Foundation.h>
 
 @interface Location : NSObject

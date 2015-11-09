@@ -22,9 +22,17 @@
 
 @interface MasterViewController () <CLLocationManagerDelegate>
 
-//@property (nonatomic,strong)NSArray *cafes;
-
 @property (nonatomic,retain) CLLocationManager *locationManager;
+
+@property (nonatomic,strong)NSString *userLatitude;
+
+@property (nonatomic,strong)NSString *userLongitude;
+
+@property (nonatomic,strong)NSString *userCoordinates;
+
+//array holds data taken fro API call, is passed to individual cafe objects
+
+@property (nonatomic,strong)NSArray *cafes;
 
 
 @end
@@ -39,25 +47,19 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     
-        [self.locationManager requestAlwaysAuthorization];
+        [self.locationManager requestAlwaysAuthorization]; //requesting location usage authorization from user
     
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    //[self.locationManager startUpdatingLocation];
     
-    [self.locationManager startUpdatingLocation];
+    [self.locationManager startUpdatingLocation]; //began tracking user pos/coordinates
     
     //[self.locationManager stopUpdatingLocation];
     
     NSLog(@"finished running main");
-    
-    [self configureRestKit];
-    
-    //[self loadShopInfo];
-    
 
     
-    
+    //technically these methods should be in viewdidLoad, but theres an issue where they are running before the user's location has been taken, which affects the API call and returns null data
     
 //  [self configureRestKit]; //prepares RESTkit objects for use
 //  
@@ -74,6 +76,8 @@
     NSLog(@"%.8f",latitude);
     NSLog(@"%.8f",longitude);
     
+    //had to convert user coordinates to string format in order to pass into API request
+    
     self.userLatitude = [NSString stringWithFormat:@"%.8f",latitude];
     
     self.userLongitude = [NSString stringWithFormat:@"%.8f",longitude];
@@ -81,72 +85,11 @@
     NSLog(@"%@",self.userLatitude);
     NSLog(@"%@",self.userLongitude);
     
-    //[self configureRestKit];
-    
-    //[self loadShopInfo];
     
     [self.locationManager stopUpdatingLocation];
     
-    //[self loadShopInfo];
     
    }
-
-
-
-//- (void)getCurrentLocation{
-//    NSLog(@"hi sanjayyyyyyy");
-//    _locationManager.delegate = self;
-//    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-//    
-//    [self.locationManager startUpdatingLocation];
-//    
-////    NSLog(@"didUpdateToLocation: %@", newLocation);
-////    CLLocation *currentLocation = newLocation;
-////    
-////    if (currentLocation != nil) {
-////        self.userLongitude = [NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude];
-////        self.userLatitude = [NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude];
-////        
-////        self.userCoordinates = [NSString stringWithFormat:@"%@,%@",self.userLatitude,self.userLongitude];
-
-        
-//        NSLog(@"THESE ARE THE COORDINATES SANJAY:   %@",self.userCoordinates);
-//        
-//        [self.locationManager stopUpdatingLocation];
-//    
-//}
-
-//#pragma mark - CLLocationManagerDelegate
-
-//- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-//{
-//    NSLog(@"didFailWithError: %@", error);
-////    UIAlertView *errorAlert = [[UIAlertView alloc]
-////                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-////    [errorAlert show];
-//    
-//    NSLog(@"ERROR: COULD NOT GET USER'S LOCATION-------");
-//}
-//
-//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-//{
-//    NSLog(@"didUpdateToLocation: %@", newLocation);
-//    CLLocation *currentLocation = newLocation;
-//    
-//    if (currentLocation != nil) {
-//        self.userLongitude = [NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude];
-//       self.userLatitude = [NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude];
-//        
-//        self.userCoordinates = [NSString stringWithFormat:@"%@,%@",self.userLatitude,self.userLongitude];
-//        
-//        
-//        NSLog(@"THESE ARE THE COORDINATES SANJAY:   %@",self.userCoordinates);
-//        
-//        [self.locationManager stopUpdatingLocation];
-//        
-//       
-//    }
-//}
 
 
 
@@ -164,17 +107,6 @@ from the API call */
 -(void)configureRestKit{
     
     // initialize AFNetworking HTTPClient
-    
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    
-    [self.locationManager requestAlwaysAuthorization];
-    
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    
-    
-    [self.locationManager startUpdatingLocation];
 
     
     
@@ -218,18 +150,6 @@ from the API call */
 
 
 -(void)loadShopInfo{
-    
-    //[self.locationManager startUpdatingLocation];
-//    self.locationManager = [[CLLocationManager alloc] init];
-//    self.locationManager.delegate = self;
-//    
-//    [self.locationManager requestAlwaysAuthorization];
-//    
-//    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-//    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-//    
-//    
-//    [self.locationManager startUpdatingLocation];
 
     NSString *userLat;
     NSString *userLon;
@@ -240,12 +160,14 @@ from the API call */
     
     NSString  *coordinates = [NSString stringWithFormat:@"%@,%@",userLat,userLon];
     
+    //if this logs as null or 0.00000, we know there was an issue getting the user's location coordinates
     NSLog(@"COORDINATES PASSED INTO RESTKIT: %@,%@",self.userLatitude,self.userLongitude);
     
  
 
+     // If shops are not being displayed we can try using hardcoded location values to debug
+    //Hardcoded values in order to test the api request NSString *coordinates = @"37.787359,-122.408227";
     
-    //NSString *coordinates = @"37.787359,-122.408227"; //@coordinates
     NSString *clientID = @"B3SPMMQCLHA3TGKTRYG2GHVPYJNLIMVKWOHIGMNBVTPKBIIW";
     NSString *clientSecret = @"12PH51ZJTDJCV25OBZ4TYDAK2R5M0J1DH2PXL0NYY02OSNUK";
     
@@ -264,6 +186,8 @@ from the API call */
                                            parameters:queryParams
      
                                             //method is fetching objects by  of a HTTP request
+                                            //storing return within the _cafes array
+     
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   _cafes = mappingResult.array;
                                                   [self.tableView reloadData];
@@ -282,11 +206,9 @@ from the API call */
 
 
 - (void)viewWillAppear:(BOOL)animated {
-   // self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
     [super viewWillAppear:animated];
    
-    
-    //[self.locationManager stopUpdatingLocation];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -296,54 +218,26 @@ from the API call */
 
 
 
-
-
-
-
-
-
-//- (void)insertNewObject:(id)sender {
-//    if (!self.objects) {
-//        self.objects = [[NSMutableArray alloc] init];
-//    }
-//    [self.objects insertObject:[NSDate date] atIndex:0];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
-
-
-
-
-
-
-
-
-
-#pragma mark - Segues
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSDate *object = self.objects[indexPath.row];
-//        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-//        [controller setDetailItem:object];
-//        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-//        controller.navigationItem.leftItemsSupplementBackButton = YES;
-//    }
-//}
-
 #pragma mark - Table View
+
+//
+///
+////  I wanted to create a detail view that would occur when a cafe was selected from the tableview, but unfortuantely the foursquare API didn't seem to provide values for the
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    //api call generates 30 venues, these are passed into rows for tableview
     return _cafes.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    //Improvement could be made to app here: I wanted to sort the table view by distance closes to user, but I wasn't sure how to access only the distance property of the _Cafes array and set that as the sorting descriptor
     
 //    NSMutableArray *arr;
 //    
@@ -353,15 +247,20 @@ from the API call */
 //        
 //        arr[i]=_cafes[i];
 //    }
-//    
     
+    
+    //individual cafe object take properties from each index in _cafes array
     
     cafe *cafe = _cafes[indexPath.row];
     cell.textLabel.text = cafe.name;
     
     double distanceInMeters = cafe.location.distance.floatValue;
     
+//venue distances are returned in meters by default, so I converted them to miles, because who uses metric system
     double distanceInMiles = distanceInMeters*0.000621371;
+    
+    
+    //table view would hold distances that were "0 miles" so I converted them to feet
     
     if(distanceInMiles < 1){
         
@@ -384,19 +283,14 @@ from the API call */
     return YES;
 }
 
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        [self.objects removeObjectAtIndex:indexPath.row];
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//    }
-//}
+
+
+//Technically these should be called automatically within the main, but I gave the user the option of manually populating the table view, because i was running into an issue where these methods would be called before the location manager had a chance to gather the users location, which would result in no coordinates being passed to the API request and ultimately no data being returned to tableview. I believe this is an issue with the threading of the RESTkit but I wasn't sure how to fix it.
 
 - (IBAction)refreshCells:(id)sender {
     
-    [self configureRestKit];
-    [self loadShopInfo];
+    [self configureRestKit]; //prepares RESTkit objects for use
+    [self loadShopInfo];     //calls API and receives response
     
 }
 @end

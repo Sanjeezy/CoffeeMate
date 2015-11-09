@@ -54,9 +54,9 @@
     
     [self.locationManager startUpdatingLocation];
     
-    [self configureRestKit]; //prepares RESTkit objects for use
+    //[self configureRestKit]; //prepares RESTkit objects for use
     
-    [self loadShopInfo]; //calls API and receives response
+    //[self loadShopInfo]; //calls API and receives response
     
     
 }
@@ -75,47 +75,12 @@
     NSLog(@"%@",self.userLatitude);
     NSLog(@"%@",self.userLongitude);
     
-    //[self configureRestKit];
-    
-    //[self loadShopInfo];
-    
     [self.locationManager stopUpdatingLocation];
     
-    //[self loadShopInfo];
     
 }
 
 
-
-
-//- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-//{
-//    
-//    int i;
-//    CLLocationCoordinate2D venueCoordinate;
-//    
-//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 3500, 3500);
-//    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
-//    
-//    // Add an annotation
-//    for(i=0;i<30;i++){
-//        
-//        cafe *cafe = _cafes[i];
-//        
-//        venueCoordinate.latitude = cafe.location.lat.doubleValue;
-//        venueCoordinate.longitude = cafe.location.lng.doubleValue;
-//    
-//    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-//        point.coordinate = venueCoordinate;
-//        point.title = [NSString stringWithFormat:@"%@",cafe.name];
-//    point.subtitle = [NSString stringWithFormat:@"%@",cafe.location.address];
-//    
-//    [self.mapView addAnnotation:point];
-//    }
-//    
-//    
-//}
-//
 
 
 
@@ -131,19 +96,6 @@
 - (void)viewWillAppear:(BOOL)animated {
 
 }
-
-
-
-
-#pragma mark - Navigation
-
- //In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    
-//    //Get the new view controller using [segue destinationViewController].
-//     //Pass the selected object to the new view controller.
-//}
-
 
 
 -(void)configureRestKit{
@@ -230,6 +182,8 @@
     
 }
 
+//  I wanted the map to autopopulate when switching into the mapview, but I was running into the same issue as my masterviewcontroller where the restkit would run before the application had a chance to get the user location info. I was also having issues passing in the coordinates that were taken from the other viewcontroller, although that would have been a much more elegant solution
+
 - (IBAction)resfreshMap:(id)sender{
     
     [self configureRestKit];
@@ -247,6 +201,8 @@
         [mapView reloadInputViews];
 
 }
+
+//Did not originally plan on having another button to populate the mapview with annotaions, but I was running into an issue where the user had to tap on the refresh button (located above) multiple times to get the annotaions to appear. This was my work around
 
 - (IBAction)addAnnotations:(id)sender {
     int i;

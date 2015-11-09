@@ -14,10 +14,5 @@
 
 @property (nonatomic,strong)IBOutlet MKMapView *mapView; //linking mapView to code
 
-//@property(nonatomic, retain) CLLocationManager *locationManager;
-
-
-
-
 
 @end

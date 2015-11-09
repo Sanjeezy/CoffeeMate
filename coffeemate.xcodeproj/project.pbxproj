@@ -15,7 +15,6 @@
 		56D87A791BE5360900BD4736 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D87A781BE5360900BD4736 /* main.m */; };
 		56D87A7C1BE5360900BD4736 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D87A7B1BE5360900BD4736 /* AppDelegate.m */; };
 		56D87A7F1BE5360900BD4736 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D87A7E1BE5360900BD4736 /* MasterViewController.m */; };
-		56D87A821BE5360900BD4736 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D87A811BE5360900BD4736 /* DetailViewController.m */; };
 		56D87A851BE5360900BD4736 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D87A831BE5360900BD4736 /* Main.storyboard */; };
 		56D87A871BE5360900BD4736 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D87A861BE5360900BD4736 /* Assets.xcassets */; };
 		56D87A8A1BE5360900BD4736 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D87A881BE5360900BD4736 /* LaunchScreen.storyboard */; };
@@ -57,8 +56,6 @@
 		56D87A7B1BE5360900BD4736 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		56D87A7D1BE5360900BD4736 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		56D87A7E1BE5360900BD4736 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		56D87A801BE5360900BD4736 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		56D87A811BE5360900BD4736 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		56D87A841BE5360900BD4736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		56D87A861BE5360900BD4736 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56D87A891BE5360900BD4736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -148,8 +145,6 @@
 				56D87A7E1BE5360900BD4736 /* MasterViewController.m */,
 				567A1BEA1BE565CE0050646B /* cafe.h */,
 				567A1BEB1BE565CE0050646B /* cafe.m */,
-				56D87A801BE5360900BD4736 /* DetailViewController.h */,
-				56D87A811BE5360900BD4736 /* DetailViewController.m */,
 				5695125D1BE73963006C6A7C /* Location.h */,
 				5695125E1BE73963006C6A7C /* Location.m */,
 				56ED383B1BE899A300D996E6 /* mapViewController.h */,
@@ -267,6 +262,7 @@
 				TargetAttributes = {
 					56D87A731BE5360900BD4736 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = T9XXX743W3;
 					};
 					56D87A8F1BE5360900BD4736 = {
 						CreatedOnToolsVersion = 7.1;
@@ -369,7 +365,6 @@
 				56D87A791BE5360900BD4736 /* main.m in Sources */,
 				56ED383D1BE899A300D996E6 /* mapViewController.m in Sources */,
 				5695125F1BE73963006C6A7C /* Location.m in Sources */,
-				56D87A821BE5360900BD4736 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,10 +504,13 @@
 			baseConfigurationReference = 71D5C01B58A02F18191847D1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = coffeemate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sanjaytamizharasu.sample.coffeemate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -521,10 +519,13 @@
 			baseConfigurationReference = 09E67173CBB444C9791E54BA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = coffeemate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sanjaytamizharasu.sample.coffeemate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

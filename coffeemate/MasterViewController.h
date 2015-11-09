@@ -16,16 +16,5 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
-@property (nonatomic,strong)NSString *userLatitude;
-
-@property (nonatomic,strong)NSString *userLongitude;
-
-@property (nonatomic,strong)NSString *userCoordinates;
-
-@property (nonatomic,strong)NSArray *cafes;
-
-
-
-
 @end
 
