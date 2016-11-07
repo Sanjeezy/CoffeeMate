@@ -1,5 +1,5 @@
 # CoffeeMate
-Coffee Mate iOS application
+Coffee Mate iOS application - uses FourSquare's API to display coffee shops near user's location
 
 Documentation
 -------------
