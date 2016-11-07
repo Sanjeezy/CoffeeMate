@@ -6,6 +6,8 @@ Documentation
 Coffee Mate
 
 
+![screen shot 2016-11-06 at 7 01 27 pm](https://cloud.githubusercontent.com/assets/10936705/20047793/7a97b7ce-a46c-11e6-9bf7-a2cc05e4f192.png)
+
 ![screen shot 2016-11-06 at 6 58 21 pm](https://cloud.githubusercontent.com/assets/10936705/20047777/5656290e-a46c-11e6-9a31-22a09475d39f.png)
 
 Usage: 	Once the application loads, tap the button at the left hand corner in order to refresh the tableview and populate it with Coffee Shops near your location. 
