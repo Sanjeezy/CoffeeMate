@@ -10,6 +10,9 @@ Coffee Mate
 
 ![screen shot 2016-11-06 at 6 58 21 pm](https://cloud.githubusercontent.com/assets/10936705/20047777/5656290e-a46c-11e6-9a31-22a09475d39f.png)
 
+![screen shot 2016-11-06 at 6 58 18 pm](https://cloud.githubusercontent.com/assets/10936705/20047830/c1769354-a46c-11e6-9499-2f2e741edf17.png)
+
+
 Usage: 	Once the application loads, tap the button at the left hand corner in order to refresh the tableview and populate it with Coffee Shops near your location. 
 
 		When switching to the Map View, tapping the refresh button will zoom into the user’s location, and tapping the “+” will populate the map with locations of nearby coffee shops. 
